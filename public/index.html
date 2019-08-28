@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Programa de Colas</title>
+</head>
+
+<body>
+    <h1>Chat</h1>
+
+    <form name="formChat" action="chat.html">
+        <input type="text" id="name" name="nombre" onkeyup="return contenidoText(this);" placeholder="nombre" pattern=".{2,}" required title="Debe tener al menos 2 caracteres">
+        <input type="text" name="sala" onkeyup="return contenidoText(this);" placeholder="sala" pattern=".{1,}" required title="Sala debe contener al menos 1 caracter">
+        <button type="submit">Ingresar</button>
+    </form>
+
+
+
+    <script src="./js/libs/jquery.min.js"></script>
+    <script>
+        function textoSinEspacios(elemento) {
+            if (elemento.indexOf(" ")) {
+                return elemento.replace(/\s/gi, '');
+            }
+            return elemento;
+        }
+
+        function contenidoText(control) {
+            control.value = textoSinEspacios(control.value);
+        }
+    </script>
+</body>
+
+</html>
